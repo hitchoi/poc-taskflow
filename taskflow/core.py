@@ -31,4 +31,4 @@ class TaskFlow:
     def list(self, include_done: bool = False) -> List[Task]:
         # include_done=False 이면 완료된 작업은 빠져야 한다.
         tasks = self._tasks if include_done else self._tasks
-        return sorted(tasks, key=lambda t: t.priority)
+        return sorted(tasks, key=lambda t: t.priority, reverse=True)
