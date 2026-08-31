@@ -28,6 +28,9 @@ class TaskFlow:
                 return True
         return False
 
+    def is_overdue(self, task: Task) -> bool:
+        return task.due < datetime.now()
+
     def list(self, include_done: bool = False) -> List[Task]:
         # include_done=False 이면 완료된 작업은 빠져야 한다.
         tasks = self._tasks if include_done else self._tasks
